@@ -18,7 +18,7 @@ public class Day {
     public Day(String dayName, List<Lesson> lessons) {
         this.DayName = dayName;
         this.Lessons = lessons;
-        this.Address = Address.Nezh;
+        this.Address = Address.Nahim;
     }
 
     public String getDayName() {

@@ -6,9 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/txtWeekNumberTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Неделя:" />
+
+    <TextView
+        android:id="@+id/txtWeekNumber"
+        app:layout_constraintStart_toEndOf="@id/txtWeekNumberTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:background="@drawable/lesson_view_rounded_layout"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSchedule"
+        app:layout_constraintTop_toBottomOf="@id/txtWeekNumberTitle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,9 @@
 package com.github.wellwineo.mpt_schedule;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,10 +11,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import androidx.annotation.GravityInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.github.wellwineo.mpt_schedule.Models.Lesson;
+import com.github.wellwineo.mpt_schedule.Models.Periodic;
 import com.github.wellwineo.mpt_schedule.R;
 
 import java.util.List;
@@ -41,17 +46,31 @@ public class LessonViewAdapter extends ArrayAdapter<Lesson> {
 
         if (lesson != null) {
             // get fucking elements
-            TextView txtNumber = convertView.findViewById(R.id.txtNumberFirst);
-            TextView txtTitle = convertView.findViewById(R.id.txtTitleFirst);
-            TextView txtLecturer = convertView.findViewById(R.id.txtLecturerFirst);
-            TextView txtTimeAt = convertView.findViewById(R.id.txtTimeAtFirst);
+            TextView txtNumberFirst = convertView.findViewById(R.id.txtNumberFirst);
+            TextView txtTitleFirst = convertView.findViewById(R.id.txtTitleFirst);
+            TextView txtLecturerFirst = convertView.findViewById(R.id.txtLecturerFirst);
+            TextView txtTimeAtFirst = convertView.findViewById(R.id.txtTimeAtFirst);
 
             // setting values
             // java: bindings? who is it? idk...
-            txtNumber.setText(String.valueOf(lesson.getNumber()));
-            txtTitle.setText(lesson.getTitle());
-            txtLecturer.setText(lesson.getLecturer());
-            txtTimeAt.setText(lesson.getTimeAt());
+            txtNumberFirst.setText(String.valueOf(lesson.getNumber()));
+            txtTitleFirst.setText(lesson.getTitle());
+            txtLecturerFirst.setText(lesson.getLecturer());
+            txtTimeAtFirst.setText(lesson.getTimeAt());
+
+            GradientDrawable shape = (GradientDrawable) convertView.getBackground();
+            if (lesson.Periodic == Periodic.Numerator)
+                shape.setColor(
+                        mContext.getResources().getColor(R.color.red)
+                );
+            else if (lesson.Periodic == Periodic.Denominator)
+                shape.setColor(
+                        mContext.getResources().getColor(R.color.blue)
+                );
+            else
+                shape.setColor(
+                        mContext.getResources().getColor(R.color.white)
+                );
         }
 
         return convertView;

@@ -2,13 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/lesson_view_rounded_layout"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutFirst"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/txtNumberFirst"
@@ -22,9 +17,11 @@
 
         <TextView
             android:id="@+id/txtTitleFirst"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/txtNumberFirst"
             app:layout_constraintEnd_toStartOf="@id/txtLecturerFirst"
             android:text="Разработка мобильных приложений"
@@ -55,61 +52,5 @@
             android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!-- if lection is periodic -->
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutSecond"
-        app:layout_constraintTop_toBottomOf="@id/layoutFirst"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/txtNumberSecond"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="1"
-            android:gravity="center_vertical"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/txtTitleSecond"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            app:layout_constraintStart_toEndOf="@+id/txtNumberSecond"
-            app:layout_constraintEnd_toStartOf="@id/txtLecturerSecond"
-            android:text="Разработка мобильных приложений"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/txtLecturerSecond"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Лясников А.О."
-            android:textSize="11sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <View
-            android:layout_width="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/txtLecturerSecond"
-            app:layout_constraintStart_toEndOf="@+id/txtTitleSecond"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/txtTimeAtSecond"
-            android:layout_height="1dp" />
-
-        <TextView
-            android:id="@+id/txtTimeAtSecond"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="10:10-11:40"
-            android:textSize="11sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

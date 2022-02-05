@@ -41,9 +41,17 @@ public class DayViewAdapter extends RecyclerView.Adapter<DayViewAdapter.DayViewH
         Day day = getItem(position);
 
         holder.dayName.setText(day.getDayName());
-        holder.address.setText(day.getAddress() == Address.Nahim ?
-                "Нахимовский"
-                : "Нежинская");
+        switch (day.getAddress()) {
+            case None:
+                holder.address.setText("-");
+                break;
+            case Nahim:
+                holder.address.setText("Нахимовский");
+                break;
+            case Nezh:
+                holder.address.setText("Нежинская");
+                break;
+        }
         LessonViewAdapter adapter = new LessonViewAdapter(mContext,
                 R.layout.lesson_view, day.getLessons());
         holder.lessons.setAdapter(adapter);
