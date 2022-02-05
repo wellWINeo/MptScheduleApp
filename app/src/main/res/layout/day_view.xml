@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="2dp"
     app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="4dp"
@@ -45,12 +45,13 @@
             android:layout_margin="3dp"
             android:background="@android:color/darker_gray"/>
 
-        <ListView
+        <com.github.wellwineo.mpt_schedule.LessonListView
             android:id="@+id/lvLessons"
             android:layout_marginTop="3dp"
             app:layout_constraintTop_toBottomOf="@id/separatorView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:isScrollContainer="false"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

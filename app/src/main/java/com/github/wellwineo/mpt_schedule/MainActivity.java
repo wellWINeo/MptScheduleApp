@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
 
         GradientDrawable drawable = (GradientDrawable) txtWeekNumber.getBackground();
         if (weekNumber % 2 == 0) {
-            txtWeekNumber.setText("Знаменатель");
-            drawable.setColor(getResources().getColor(R.color.blue));
-        } else {
             txtWeekNumber.setText("Числитель");
             drawable.setColor(getResources().getColor(R.color.red));
+        } else {
+            txtWeekNumber.setText("Знаменатель");
+            drawable.setColor(getResources().getColor(R.color.blue));
         }
 
         DayViewAdapter adapter = new DayViewAdapter(this, Repository.Schedule);
