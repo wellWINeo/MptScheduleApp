@@ -34,11 +34,10 @@ public class MainActivity extends AppCompatActivity {
             bar.setTitle("Расписание МПТ");
 
         Calendar calendar = Calendar.getInstance();
-        int weekNumber = calendar.get(Calendar.WEEK_OF_YEAR);
+        int weekNumber = (int) calendar.get(Calendar.DAY_OF_YEAR) / 7;
 
         rvSchedule = findViewById(R.id.rvSchedule);
         txtWeekNumber = findViewById(R.id.txtWeekNumber);
-
 
         GradientDrawable drawable = (GradientDrawable) txtWeekNumber.getBackground();
         if (weekNumber % 2 == 0) {
